@@ -1,0 +1,178 @@
+@charset "UTF-8";
+*, *::after, *::before {
+  margin: 0;
+  /* الكل ما يكون  عنده هامش   */
+  padding: 0;
+  /* الكل ما يكون  عنده هامش   */
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+/* تعريف الانميشن  */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    /*  معدل الشفافيه */
+    transform: translateX(-10rem);
+    /*  الانتقال */ }
+  50% {
+    color: rebeccapurple; }
+  80% {
+    transform: translateX(1rem);
+    color: #759933; }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    /*  معدل الشفافيه */
+    transform: translateX(10rem);
+    /*  الانتقال */ }
+  50% { }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBotton {
+  0% {
+    opacity: 0;
+    /*  معدل الشفافيه */
+    transform: translateY(3rem);
+    /*  الانتقال */ }
+  50% { }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+body {
+  font-family: 'Lato', sens-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  backface-visibility: hidden;
+  /* تضبيط تغير المكان بعد الانيميشن مع انه ما تغير معي وتغير مع الكورس */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft;
+    /*  تشغيل الانيميشن*/
+    animation-duration: 2s;
+    /*  سرعه تشغيل  الانيميشن*/
+    animation-timing-function: ease-out;
+    /*  التحكم بالتشغيل */
+    /* animation-delay: 3s;  انتضار حتى تشغيلها 
+          animation-iteration-count: 3;  عدد مرات تشغيلها 
+          animation-timing-function: ease-out;   التحكم بالتشغيل 
+        */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out;
+    /* اختصار للي قبله*/ }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  /* عشان الهوفر و الكتف يكون لهم حركه انتقال */
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s; }
+
+.btn--animated {
+  animation: moveInBotton 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/zulfi.jpg);
+  background-size: cover;
+  /* لاكمال العنصر  */
+  background-position: center;
+  /*  عشان الخلفيه ما تنقص من فوق*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /*  تحديد نطاق الخلفيه (قصها حسب الحاجه )ز*/
+  position: relative;
+  /* animation: changePic 5s infinite; */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /*   لاجل وضعه في المنتصف*/
+    left: 50%;
+    /* لاجل وضعه بالمنتصف  */
+    transform: translate(-50%, -50%);
+    /*  لاجل تحريكها للمكان المطلوب */
+    text-align: center; }
+  .header__logo {
+    height: 3.5rem; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+    background-color: orangered;
+    float: left; }
+    .row .col-1-of-2:not(:last-child) {
+      margin-right: 6rem; }

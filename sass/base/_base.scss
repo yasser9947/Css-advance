@@ -1,0 +1,16 @@
+*, *::after , *::before {
+    margin: 0;
+    /* الكل ما يكون  عنده هامش   */
+    padding: 0;
+    /* الكل ما يكون  عنده هامش   */
+    box-sizing: inherit;
+}
+html {
+    //this defind what 1rem is 
+    font-size: 62.5%;
+}
+
+body {
+
+    box-sizing: border-box;
+}

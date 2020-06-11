@@ -1,0 +1,34 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, $color-primary-light,$color-primary-dark) ,url(../img/zulfi.jpg);   
+    background-size: cover;   /* لاكمال العنصر  */
+    background-position: center;  /*  عشان الخلفيه ما تنقص من فوق*/
+    clip-path: polygon(0 0 , 100% 0, 100% 75% , 0 100%); /*  تحديد نطاق الخلفيه (قصها حسب الحاجه )ز*/
+    position: relative;
+    /* animation: changePic 5s infinite; */
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__text-box{
+        position: absolute;
+        top: 40%; /*   لاجل وضعه في المنتصف*/
+        left: 50%;  /* لاجل وضعه بالمنتصف  */
+        transform: translate(-50% , -50%); /*  لاجل تحريكها للمكان المطلوب */
+        text-align: center;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+       
+    }
+
+}
+
+
+
+
+
+
