@@ -7,10 +7,14 @@
 @import 'base/typograghy';
 @import 'base/utillities';
 
+@import 'components/card';
+@import 'components/feacture-box';
 @import 'components/button';
+@import 'components/composition';       
 
-@import 'layout/header';
 @import 'layout/grid';
+@import 'layout/header';
+
 
 @import 'pages/home';
 

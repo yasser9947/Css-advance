@@ -1,0 +1,31 @@
+.feature-box{
+background-color: rgba( $color-white,   0.8);
+font-size: 1.5rem;
+padding: 2.5rem;
+margin-top: -12rem;
+text-align: center;
+border-radius: 3px;
+box-shadow: 0 1.5rem 4rem rgba($color: $color-black, $alpha: 1.0);
+transition: all 0.3s;
+color: rgb(248, 246, 246);
+&:hover{
+    transform: translateY(-1.5rem);
+}
+
+    &__icon{
+        font-size: 6rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;// اذا حطيناه ياخذ مساحه بالضبط على الطتابه ما يزيدد 
+        background-image: linear-gradient(to right ,$color-primary-light , $color-primary-dark);
+        -webkit-background-clip: text; // عشان يكون الباكقروند بالضبط على شكل التيكست ما يكون زياده
+        color: transparent; // عشان اللون يصير نفس الباكقروند
+       
+    }
+
+    &__text{
+        
+    }
+    &:last-child{
+        background-color: rgba($color: #0a0909, $alpha: 0.7);
+    }
+}
